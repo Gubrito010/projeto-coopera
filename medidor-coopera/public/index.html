@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Faz o site se adaptar ao celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Nome que aparece na aba do navegador -->
+    <title>Medidor Coopera | Energia Inteligente</title>
+
+    <!-- Conecta o arquivo CSS ao HTML -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- CABEÇALHO DO SITE -->
+    <header class="cabecalho">
+      <a href="#" class="logo">
+        <span class="logo-icone">✳</span>
+        <span>coopera<span class="logo-destaque">.</span></span>
+      </a>
+
+      <nav class="navegacao">
+        <a href="#inicio">Início</a>
+        <a href="#simulador">Simulador</a>
+        <a href="#resultados">Resultados</a>
+      </nav>
+
+      <div class="status">
+        <span class="status-bolinha"></span>
+        Energia inteligente
+      </div>
+    </header>
+
+    <main>
+      <!-- APRESENTAÇÃO -->
+      <section class="hero" id="inicio">
+        <div class="hero-conteudo">
+          <span class="etiqueta">
+            <span>✦</span> COOPERA LUZ · SIMULADOR DE ENERGIA
+          </span>
+
+          <h1>
+            Sua energia,<br />
+            <span>sob controle.</span>
+          </h1>
+
+          <p>
+            Descubra quanto seus aparelhos consomem, estime sua conta de luz e
+            veja o potencial da energia solar na sua casa.
+          </p>
+
+          <a href="#simulador" class="botao botao-principal">
+            Começar simulação <span>↘</span>
+          </a>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="circulo-externo"></div>
+          <div class="circulo-interno"></div>
+
+          <div class="sol">
+            <span>☀</span>
+          </div>
+
+          <div class="painel-solar">
+            <div class="painel-linhas"></div>
+          </div>
+
+          <div class="hero-selo">
+            <span>ENERGIA DO FUTURO</span>
+            <strong>Mais consciência.</strong>
+            <strong>Menos desperdício.</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAIXA INFORMATIVA -->
+      <section class="indicadores" aria-label="Informações do projeto">
+        <div class="indicador">
+          <span class="indicador-icone">⌁</span>
+          <div>
+            <strong>Consumo consciente</strong>
+            <p>Entenda seus gastos</p>
+          </div>
+        </div>
+
+        <div class="indicador">
+          <span class="indicador-icone">↗</span>
+          <div>
+            <strong>Energia solar</strong>
+            <p>Explore novas possibilidades</p>
+          </div>
+        </div>
+
+        <div class="indicador">
+          <span class="indicador-icone">◎</span>
+          <div>
+            <strong>Simulação mensal</strong>
+            <p>Planeje sua conta de luz</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ÁREA PRINCIPAL DO SIMULADOR -->
+      <section class="secao-simulador" id="simulador">
+        <div class="titulo-secao">
+          <div>
+            <span class="subtitulo">VAMOS COMEÇAR</span>
+            <h2>Monte sua simulação</h2>
+            <p>Adicione os aparelhos e informe como você os utiliza.</p>
+          </div>
+
+          <span class="passo">ETAPA 01 / 02</span>
+        </div>
+
+        <div class="layout-simulador">
+          <!-- FORMULÁRIO DE CADASTRO -->
+          <section class="cartao cartao-formulario">
+            <div class="cartao-cabecalho">
+              <div class="icone-cartao">＋</div>
+              <div>
+                <h3>Novo aparelho</h3>
+                <p>Preencha os dados abaixo</p>
+              </div>
+            </div>
+
+            <form id="form-aparelho">
+              <div class="campo">
+                <label for="nome">Nome do aparelho</label>
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  placeholder="Ex.: Geladeira"
+                  required
+                />
+              </div>
+
+              <div class="campo">
+                <label for="potenciaW">Potência (watts)</label>
+                <div class="campo-unidade">
+                  <input
+                    type="number"
+                    id="potenciaW"
+                    name="potenciaW"
+                    placeholder="Ex.: 150"
+                    min="1"
+                    max="10000"
+                    step="any"
+                    required
+                  />
+                  <span>W</span>
+                </div>
+                <small>Confira a potência na etiqueta do aparelho.</small>
+              </div>
+
+              <div class="campos-duplos">
+                <div class="campo">
+                  <label for="horasDia">Horas por dia</label>
+                  <input
+                    type="number"
+                    id="horasDia"
+                    name="horasDia"
+                    placeholder="Ex.: 8"
+                    min="0"
+                    max="24"
+                    step="any"
+                    required
+                  />
+                </div>
+
+                <div class="campo">
+                  <label for="diasMes">Dias no mês</label>
+                  <input
+                    type="number"
+                    id="diasMes"
+                    name="diasMes"
+                    placeholder="Ex.: 30"
+                    min="1"
+                    max="31"
+                    step="1"
+                    value="30"
+                    required
+                  />
+                </div>
+              </div>
+
+              <button type="submit" class="botao botao-adicionar">
+                <span>＋</span> Adicionar aparelho
+              </button>
+            </form>
+
+            <div class="dica">
+              <span>ⓘ</span>
+              <p>
+                Dica: a potência geralmente aparece em uma etiqueta na parte
+                traseira do aparelho.
+              </p>
+            </div>
+          </section>
+
+          <!-- LISTA DE APARELHOS -->
+          <section class="cartao cartao-lista">
+            <div class="cartao-cabecalho">
+              <div class="icone-cartao icone-verde">▤</div>
+              <div>
+                <h3>Seus aparelhos</h3>
+                <p>Confira os itens adicionados</p>
+              </div>
+
+              <span class="contador" id="contador-aparelhos">0</span>
+            </div>
+
+            <!-- O JavaScript vai inserir os aparelhos aqui -->
+            <ul id="lista-aparelhos" class="lista-aparelhos">
+              <li class="lista-vazia">
+                <span class="vazio-icone">⌁</span>
+                <strong>Nenhum aparelho por aqui</strong>
+                <p>Adicione seu primeiro aparelho ao formulário.</p>
+              </li>
+            </ul>
+
+            <div class="resumo-lista">
+              <span>Itens cadastrados</span>
+              <strong id="total-aparelhos">0 aparelhos</strong>
+            </div>
+
+            <button type="button" id="btn-simular" class="botao botao-simular">
+              Simular consumo <span>→</span>
+            </button>
+
+            <!-- O JavaScript vai mostrar mensagens de erro aqui -->
+            <p id="mensagem-erro" class="mensagem-erro" role="alert"></p>
+          </section>
+        </div>
+      </section>
+
+      <!-- RESULTADOS DA SIMULAÇÃO -->
+      <section class="secao-resultados" id="resultados">
+        <div class="titulo-secao">
+          <div>
+            <span class="subtitulo">SEUS NÚMEROS</span>
+            <h2>Visão geral do consumo</h2>
+            <p>Os resultados aparecerão depois da simulação.</p>
+          </div>
+
+          <span class="etiqueta etiqueta-neutra">RESUMO MENSAL</span>
+        </div>
+
+        <!-- O JavaScript vai preencher os resultados desta área -->
+        <div id="resultado">
+          <div class="grade-resultados">
+            <article class="cartao-resultado">
+              <span class="resultado-icone">⌁</span>
+              <p>Consumo mensal</p>
+              <strong>-- <small>kWh</small></strong>
+              <span class="resultado-legenda">Energia consumida</span>
+            </article>
+
+            <article class="cartao-resultado destaque-resultado">
+              <span class="resultado-icone">R$</span>
+              <p>Conta estimada</p>
+              <strong>R$ --</strong>
+              <span class="resultado-legenda">Energia + bandeira</span>
+            </article>
+
+            <article class="cartao-resultado">
+              <span class="resultado-icone">☀</span>
+              <p>Painéis solares</p>
+              <strong>-- <small>painéis</small></strong>
+              <span class="resultado-legenda">Estimativa necessária</span>
+            </article>
+          </div>
+
+          <div class="cartao cartao-detalhes">
+            <div class="cartao-cabecalho">
+              <div>
+                <h3>Detalhamento dos aparelhos</h3>
+                <p>Veja o consumo individual de cada item.</p>
+              </div>
+            </div>
+
+            <div class="tabela-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Aparelho</th>
+                    <th>Consumo mensal</th>
+                    <th>Custo mensal</th>
+                    <th>Participação</th>
+                  </tr>
+                </thead>
+
+                <tbody id="tabela-detalhes">
+                  <tr>
+                    <td colspan="4" class="tabela-vazia">
+                      Seus dados aparecerão aqui após a simulação.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+      <a href="#inicio" class="logo logo-rodape">
+        <span class="logo-icone">✳</span>
+        <span>coopera<span class="logo-destaque">.</span></span>
+      </a>
+
+      <p>Energia inteligente para um futuro mais consciente.</p>
+
+      <span class="rodape-direitos">© 2026 · Medidor Coopera</span>
+    </footer>
+
+    <!-- Você vai criar e conectar o JavaScript depois -->
+    <!-- <script src="app.js"></script> -->
+  </body>
+</html>
